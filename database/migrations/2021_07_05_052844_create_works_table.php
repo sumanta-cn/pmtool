@@ -18,10 +18,10 @@ class CreateWorksTable extends Migration
             $table->longText('work_desc');
             $table->string('asignee',100);
             $table->string('asigned_to',100);
-            $table->double('progress', 15, 2)->nullable()->default(0.00);
-            $table->enum('priority', ['high', 'low','medium'])->nullable()->default(['medium']);
+            $table->double('progress', 15, 2)->default(0.00);
+            $table->enum('priority',['high','medium','low']);
             $table->string('document',50)->nullable();
-            $table->boolean('is_active')->nullable()->default(false);
+            $table->tinyInteger('is_active')->default(0);
             $table->timestamps();
         });
     }
