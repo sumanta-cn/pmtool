@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => 'ed4886622f9ace26d7558ef9611db7a5ab45d109',
+    'reference' => '9995ae6424a38a17ac66f8bc35e4ac387d4878fa',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -532,7 +532,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => 'ed4886622f9ace26d7558ef9611db7a5ab45d109',
+      'reference' => '9995ae6424a38a17ac66f8bc35e4ac387d4878fa',
     ),
     'laravel/sail' => 
     array (
@@ -590,12 +590,12 @@ private static $installed = array (
     ),
     'monolog/monolog' => 
     array (
-      'pretty_version' => '2.2.0',
-      'version' => '2.2.0.0',
+      'pretty_version' => '2.3.0',
+      'version' => '2.3.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '1cb1cde8e8dd0f70cc0fe51354a59acad9302084',
+      'reference' => 'df991fd88693ab703aa403413d83e15f688dae33',
     ),
     'mtdowling/cron-expression' => 
     array (
