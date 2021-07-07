@@ -16,6 +16,10 @@ class Rolecheck
      */
     public function handle(Request $request, Closure $next)
     {
+        if($request->role && $request->role===""){
+            return redirect(403);
+        }
         return $next($request);
+
     }
 }
