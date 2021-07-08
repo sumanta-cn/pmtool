@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                        <? print_r($request) ?>
                     {{ __('You are logged in!') }}
                 </div>
             </div>
