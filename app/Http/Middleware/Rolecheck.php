@@ -22,7 +22,7 @@ class Rolecheck
         //     return redirect(403);
         // }
         if(!Auth::user() || Auth::user()->role_id==0){
-            return redirect(403);
+            return redirect('noaccess');
         }
         return $next($request);
     }
