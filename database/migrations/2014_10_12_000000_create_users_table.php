@@ -21,8 +21,10 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->bigInteger('role_id');
             $table->tinyInteger('is_active');
             $table->timestamps();
+            //$table->foreign('role_id')->references('id')->on('role')->onDelete('cascade');
         });
     }
 
