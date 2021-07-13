@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'e0f5d549b38aaea3fc2e4755a91cc6a14e2bfe37',
+    'reference' => '94d66984da84a1589d30073947c98757b58f538d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -162,12 +162,12 @@
     ),
     'facade/ignition' => 
     array (
-      'pretty_version' => '2.10.2',
-      'version' => '2.10.2.0',
+      'pretty_version' => '2.11.0',
+      'version' => '2.11.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '43688227bbf27c43bc1ad83af224f135b6ef0ff4',
+      'reference' => 'dc6818335f50ccf0b90284784718ea9a82604286',
     ),
     'facade/ignition-contracts' => 
     array (
@@ -508,7 +508,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'e0f5d549b38aaea3fc2e4755a91cc6a14e2bfe37',
+      'reference' => '94d66984da84a1589d30073947c98757b58f538d',
     ),
     'laravel/sail' => 
     array (

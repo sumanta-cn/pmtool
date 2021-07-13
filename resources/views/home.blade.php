@@ -1,5 +1,4 @@
-{{-- @extends( Auth::user()->role === 'admin' ? 'layouts.dashboard' : '' ) --}}
-@extends('layouts.dashboard')
+@extends( Auth::user()->role->role_name === 'Admin' ? 'layouts.dashboard' : '' )
 @section('content')
 
 <!-- Content Wrapper. Contains page content -->
