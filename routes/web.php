@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
+use App\Http\Controllers\HomeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-})->middleware('auth','Rolecheck');
+// Route::view('/home', 'home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
+Route::get('/test',[HomeController::class, 'test']);
 // Route::middleware(['auth', 'rolecheck'])->group(function () {
 
 // });
+Route::get('/home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
