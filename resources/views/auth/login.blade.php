@@ -40,7 +40,7 @@
                     </a>
               @endif
               @if (Route::has('register'))
-              <a class="btn btn-lg btn-facebook btn-block text-uppercase" href="{{ route('register') }}"><i class="fas fa-user-plus mr-2"></i> {{ __('Register') }}</a>
+                <a class="btn btn-lg btn-facebook btn-block text-uppercase" href="{{ route('register') }}"><i class="fas fa-user-plus mr-2"></i> {{ __('Register') }}</a>
               @endif
             </form>
           </div>
