@@ -102,7 +102,7 @@
             </a>
           </li>
           <li class="nav-item ">
-            <a href="#" class="nav-link " href="{{ route('logout') }}"onclick="event.preventDefault();
+            <a class="nav-link " href="{{ route('logout') }}"onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>Logout</p>
@@ -117,7 +117,7 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-  @yield('content')
+  @yield('admincontent')
 
   {{-- <footer class="main-footer">
     <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
