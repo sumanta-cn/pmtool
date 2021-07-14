@@ -11,10 +11,8 @@ use App\Models\Work;
 class HomeController extends Controller
 {
     public function index(){
-        //$user=User::with('role')->get();
-        //echo '<pre>';print_r($user->toArray());die;
         $user = Auth::user()->role->role_name;
-        $alluser= User::get()->where('role_id','!=','1')->count();        
+        $alluser= User::get()->where('role_id','!=','1')->count();
         $devuser= User::with('role')->
         whereHas('role', function($q){$q->where('role_name','=','Developer');})
         ->get()->count();
@@ -30,8 +28,7 @@ class HomeController extends Controller
         //dd($data);
         return view('home',['data'=>$data]);
     }
-    public function test(){
-        echo '12';die;
-        return view('home');
+    public function userlist(){
+        return view('userlist');
     }
 }

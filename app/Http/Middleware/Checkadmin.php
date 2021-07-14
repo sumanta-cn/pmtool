@@ -17,7 +17,7 @@ class Checkadmin
     public function handle(Request $request, Closure $next)
     {
         if(Auth::user()->role->role_name != 'Admin'){
-            return view('noaccess');
+            return redirect('noaccess');
         }
         return $next($request);
     }
