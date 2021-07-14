@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +25,4 @@ Route::get('/test',[HomeController::class, 'test']);
 
 // });
 Route::get('/home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
+Route::get('/noaccess',[Controller::class, 'index']);
