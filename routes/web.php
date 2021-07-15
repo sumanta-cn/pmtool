@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Middleware;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AjaxController;
 use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +19,9 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('welcome');
 });
-
+Route::middleware(['auth'])->group(function () {
+    Route::any('/approveuser',[AjaxController::class, 'approveuser']);
+});
 // Route::view('/home', 'home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
 Route::get('/test',[HomeController::class, 'test']);
 Route::get('/user_list',[HomeController::class, 'userlist'])->middleware('auth','Rolecheck','Checkadmin')->name('user_list');

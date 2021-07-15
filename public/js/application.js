@@ -1,6 +1,11 @@
-//var base_url = window.location.origin + '/';
+var base_url = $('#base_url').val()+'/';
 var current = window.location.origin +location.pathname;
-console.log(current);
+$.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+});
+var csrf_token= $("#csrf_token").val();
     $('.nav a').removeClass('active');
     $('.nav a').each(function() {
         var $this = $(this);
@@ -23,4 +28,22 @@ console.log(current);
           "autoWidth": false,
           "responsive": true,
         });
+    });
+    $("#userlist").on('click','.approve',function(){
+        var id = $(this).data('id');
+        $.ajax({
+            type: 'POST',
+            url: base_url+"approveuser",
+            data: { id: id },
+            dataType: "json",
+            success: function (data) {
+                console.log('11');
+                swal({
+                    title:"User successfully approved",
+                    type:"success",
+                    showConfirmButton: false,
+                    timer:1500,
+                });
+            }
+        })
     });

@@ -23,14 +23,28 @@ class UserSeeder extends Seeder
             'password' => Hash::make('password123'),
             'remember_token' => Str::random(100),
             'is_active' => 1,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
         DB::table('users')->insert([
             'name' => 'soumyajit',
             'email' => 'soumyajit@capitalnumbers.com',
-            'role_id' => 3,
             'password' => Hash::make('password'),
             'remember_token' => Str::random(100),
-            'is_active' => 1,
+            'is_active' => 0,
+            'role_id' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
+        ]);
+        DB::table('users')->insert([
+            'name' => 'diptadip',
+            'email' => 'diptadip@capitalnumbers.com',
+            'password' => Hash::make('password'),
+            'remember_token' => Str::random(100),
+            'is_active' => 0,
+            'role_id' => 0,
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s')
         ]);
     }
 }

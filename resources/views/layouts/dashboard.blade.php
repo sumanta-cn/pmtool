@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>Project Management Tool | Dashboard</title>
 
   <!-- Google Font: Source Sans Pro -->
@@ -117,6 +118,7 @@
     </div>
     <!-- /.sidebar -->
   </aside>
+  <input type="hidden" id="base_url" value="<?=URL::to('/')?>">
   @yield('admincontent')
 
   {{-- <footer class="main-footer">
@@ -147,6 +149,7 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <script src="js/application.js"></script>
+<script src="js/sweetalert.min.js"></script>
 <!-- ChartJS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
 <!-- Sparkline -->

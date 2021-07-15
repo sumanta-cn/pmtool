@@ -51,7 +51,7 @@
                 <p>Developer</p>
               </div>
               <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="fab fa-dev"></i>
               </div>
               <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -66,7 +66,7 @@
                 <p>Project Manager</p>
               </div>
               <div class="icon">
-                <i class="ion ion-person-add"></i>
+                <i class="fas fa-user-tie"></i>
               </div>
               <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -81,7 +81,7 @@
                 <p>Clients</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="fas fa-user-circle"></i>
               </div>
               <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -97,7 +97,7 @@
                 <p>Projects</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="fas fa-project-diagram"></i>
               </div>
               <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
             </div>
@@ -113,7 +113,7 @@
                 <p>Active Works</p>
               </div>
               <div class="icon">
-                <i class="ion ion-pie-graph"></i>
+                <i class="fas fa-tasks"></i>
               </div>
               <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
             </div>

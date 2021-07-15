@@ -35,33 +35,31 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Crated on</th>
-
+                    <th>Created on</th>
+                    <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.2</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.2</td>
-
-                  </tr>
-                  <tr>
-                    <td>Gecko</td>
-                    <td>Mozilla 1.3</td>
-                    <td>Win 95+ / OSX.1+</td>
-                    <td>1.3</td>
-
-                  </tr>
-
+                        <?php if(isset($users) && !empty($users)){$i=1;foreach($users as $userval){?>
+                            <tr class="tr{{$userval->id}}">
+                                <td>{{$i++}}</td>
+                                <td>{{$userval->name}}</td>
+                                <td>{{$userval->email}}</td>
+                                <td class="text-nowrap">{{date_format((date_create($userval->created_at)),"dS F, g:i A, Y")}}</td>
+                                <td class="text-nowrap text-center">
+                                    <a href="javascript:void()" class="btn btn-sm btn-success mr-2 approve" data-id="{{$userval->id}}" title="Approve user"><i class="fas fa-check"></i></a>
+                                    <a href="javascript:void()" class="btn btn-sm btn-danger delete" data-id="{{$userval->id}}" title="Delete User"><i class="fas fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        <?php } } ?>
                   </tbody>
-                  <tfoot>
+                  <tfoot class="thead-dark text-center">
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Crated on</th>
+                    <th>Created on</th>
+                    <th>Action</th>
                   </tr>
                   </tfoot>
                 </table>

@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>Lumino - Dashboard</title>
 	<link href="developer/css/bootstrap.min.css" rel="stylesheet">
 	<link href="developer/css/font-awesome.min.css" rel="stylesheet">
@@ -122,7 +123,7 @@
 				<h1 class="page-header">Dashboard</h1>
 			</div>
 		</div><!--/.row-->
-
+        <input type="hidden" id="base_url" value="<?=URL::to('/')?>">
 		<div class="panel panel-container">
 			<div class="row">
 				<div class="col-xs-6 col-md-3 col-lg-3 no-padding">
