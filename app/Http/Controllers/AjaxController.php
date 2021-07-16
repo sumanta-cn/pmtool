@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class AjaxController extends Controller
 {
     public function approveuser(){
-
+        return true;
     }
 }

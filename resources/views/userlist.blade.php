@@ -47,8 +47,8 @@
                                 <td>{{$userval->email}}</td>
                                 <td class="text-nowrap">{{date_format((date_create($userval->created_at)),"dS F, g:i A, Y")}}</td>
                                 <td class="text-nowrap text-center">
-                                    <a href="javascript:void()" class="btn btn-sm btn-success mr-2 approve" data-id="{{$userval->id}}" title="Approve user"><i class="fas fa-check"></i></a>
-                                    <a href="javascript:void()" class="btn btn-sm btn-danger delete" data-id="{{$userval->id}}" title="Delete User"><i class="fas fa-trash"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-success mr-2 approve" data-id="{{$userval->id}}" title="Approve user"><i class="fas fa-check"></i></a>
+                                    <a href="javascript:void(0)" class="btn btn-sm btn-danger delete" data-id="{{$userval->id}}" title="Delete User"><i class="fas fa-trash"></i></a>
                                 </td>
                             </tr>
                         <?php } } ?>
