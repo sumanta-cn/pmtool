@@ -11,9 +11,10 @@ class AjaxController extends Controller
     public function approveuser(Request $request){
         $id = $request->id > 0 ? $request->id : 0;
         if($request->id > 0){
-            $data= User::select('id','name','email','is_active')->find($id);
+            $data= User::select('id','name','email','is_active','updated_at')->find($id);
             if(isset($data) && !empty($data)){
                 $data->is_active= 1;
+                $data->updated_at= date('Y-m-d H:i:s');
                 $data->save();
                 return response()->json(array('msg'=> 'Approved Successfully','icon'=>'success'), 200);
             }else{

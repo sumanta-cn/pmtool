@@ -33,4 +33,7 @@ class HomeController extends Controller
         //dd($users);
         return view('userlist',['users'=>$users]);
     }
+    public function assignrole(){
+        return view('assignrole');
+    }
 }

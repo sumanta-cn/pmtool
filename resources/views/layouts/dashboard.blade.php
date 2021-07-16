@@ -102,6 +102,12 @@
               <p>User Approval</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('assign_role')}}" class="nav-link">
+              <i class="nav-icon fas fa-users"></i>
+              <p>Assign Role</p>
+            </a>
+          </li>
           <li class="nav-item ">
             <a class="nav-link " href="{{ route('logout') }}"onclick="event.preventDefault();
                           document.getElementById('logout-form').submit();">
