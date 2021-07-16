@@ -15,11 +15,13 @@ class AjaxController extends Controller
             if(isset($data) && !empty($data)){
                 $data->is_active= 1;
                 $data->save();
+                return response()->json(array('msg'=> 'Approved Successfully','icon'=>'success'), 200);
+            }else{
+                return response()->json(array('msg'=> 'User Not Found','icon'=>'error'), 404);
             }
-            return response()->json(array('msg'=> 'approved successfully'), 200);
         }else{
-            return response()->json(array('msg'=> $id), 500);
+            return response()->json(array('msg'=> 'User Invalid','icon'=>'error'), 500);
         }
-        return response()->json(array('msg'=> $id), 200);
+        return response()->json(array('msg'=> 'Method Not Accessible','icon'=>'warning'), 403);
     }
 }

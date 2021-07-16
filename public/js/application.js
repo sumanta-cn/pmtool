@@ -39,17 +39,17 @@ var csrf_token= $("#csrf_token").val();
             success: function (data) {
                 $('.tr'+id).hide();            // console.log('11');
                 Swal.fire({
-                    title:"User Successfully Approved",
-                    icon: 'success',
+                    title:data.msg,
+                    icon: data.icon,
                     showConfirmButton: false,
                     timer:1500,
                 });
                 $( "#userlist" ).load( base_url+'user_list #userlist' );
             },
-            error : function(){
+            error : function(data){
                 Swal.fire({
-                    title:"User Successfully Approved",
-                    icon: 'error',
+                    title:data.msg,
+                    icon: data.icon,
                     showConfirmButton: false,
                     timer:1500,
                 });
