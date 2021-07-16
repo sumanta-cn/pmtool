@@ -64,7 +64,7 @@ svg {
   </svg>
 <h1>You are not allowed to enter here</h1>
 <h2>Go <a target="_blank" href="{{route('logout')}}" onclick="event.preventDefault();
-    document.getElementById('logout-form').submit();">Back!</a></h2>
+    document.getElementById('logout-form').submit();"><u>Back!</u></a></h2>
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
     </form>
