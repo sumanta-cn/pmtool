@@ -29,25 +29,45 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="userlist" class="table table-bordered table-hover">
+                <table id="unapprovelist" class="table table-bordered table-hover">
                   <thead class="thead-dark text-center">
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
                     <th>Approved on</th>
+                    <th>Select Role</th>
                     <th>Action</th>
                   </tr>
                   </thead>
                   <tbody>
-
+                    <?php if(isset($users) && !empty($users)){$i=1;foreach($users as $userval){?>
+                        <tr class="tr{{$userval->id}}">
+                            <td>{{$i++}}</td>
+                            <td>{{$userval->name}}</td>
+                            <td>{{$userval->email}}</td>
+                            <td class="text-nowrap">{{date_format((date_create($userval->updated_at)),"dS F, g:i A, Y")}}</td>
+                            <td class="align-middle">
+                                <select class="form-control form-control-sm roleselect" data-id="{{$userval->id}}">
+                                    <option>-------Select Role-------</option>
+                                    <?php if(isset($roles) && !empty($roles)){foreach($roles as $roleval){?>
+                                        <option value="{{$roleval->id}}">{{$roleval->role_name}}</option>
+                                    <?php } } ?>
+                                </select>
+                            </td>
+                            <td class="text-nowrap text-center">
+                                <div class="td{{$userval->id}}"></div>
+                            </td>
+                        </tr>
+                    <?php } } ?>
                   </tbody>
                   <tfoot class="thead-dark text-center">
                   <tr>
                     <th>Id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Created on</th>
+                    <th>Approved on</th>
+                    <th>Select Role</th>
                     <th>Action</th>
                   </tr>
                   </tfoot>

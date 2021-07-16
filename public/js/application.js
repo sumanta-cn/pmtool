@@ -19,7 +19,7 @@ var csrf_token= $("#csrf_token").val();
           "responsive": true, "lengthChange": false, "autoWidth": false,
           "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
         }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-        $('#userlist').DataTable({
+        $('#userlist,#unapprovelist').DataTable({
           "paging": true,
           "lengthChange": false,
           "searching": false,
@@ -74,3 +74,17 @@ var csrf_token= $("#csrf_token").val();
             }
         })
     });
+    $( '.roleselect' ).change(function() {
+
+        var role= $(this).val();
+        var id= $(this).data('id');
+        console.log(role);
+        if (role != undefined || role !='' || role > 0) {
+            var html= '<a href="javascript:void(0)" class="btn btn-sm btn-success assign" data-role-id="'+role+'" data-id="'+id+'" title="Assign Role"><i class="fas fa-check"></i></a>';
+            $('.td'+id).empty().append(html);
+        }else{
+            $('.td'+id).empty();
+        }
+
+    })
+

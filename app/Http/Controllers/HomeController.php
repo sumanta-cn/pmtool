@@ -34,6 +34,8 @@ class HomeController extends Controller
         return view('userlist',['users'=>$users]);
     }
     public function assignrole(){
-        return view('assignrole');
+        $users= User::select('id','email','name','Updated_at')->where('role_id','!=','1')->where('is_active','!=','1')->get();
+        $roles= Role::select('id','role_name')->where('role_name','!=','Admin')->get();
+        return view('assignrole',['users'=>$users,'roles'=>$roles]);
     }
 }
