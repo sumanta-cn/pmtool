@@ -29,7 +29,7 @@ class HomeController extends Controller
         return view('home',['data'=>$data]);
     }
     public function userlist(){
-        $users= User::select('id','email','name','created_at')->where('role_id','!=','1')->get();
+        $users= User::select('id','email','name','created_at')->where('role_id','!=','1')->where('is_active','!=','1')->get();
         //dd($users);
         return view('userlist',['users'=>$users]);
     }

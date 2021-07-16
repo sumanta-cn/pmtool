@@ -37,10 +37,37 @@ var csrf_token= $("#csrf_token").val();
             data: { id: id },
             dataType: "json",
             success: function (data) {
+                $('.tr'+id).hide();            // console.log('11');
+                Swal.fire({
+                    title:"User Successfully Approved",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:1500,
+                });
+                $( "#userlist" ).load( base_url+'user_list #userlist' );
+            },
+            error : function(){
+                Swal.fire({
+                    title:"User Successfully Approved",
+                    icon: 'error',
+                    showConfirmButton: false,
+                    timer:1500,
+                });
+            }
+        })
+    });
+    $("#userlist").on('click','.delete',function(){
+        var id = $(this).data('id');
+        $.ajax({
+            type: 'POST',
+            url: base_url+"approveuser",
+            data: { id: id },
+            dataType: "json",
+            success: function (data) {
                 console.log('11');
-                swal({
-                    title:"User successfully approved",
-                    type:"success",
+                Swal.fire({
+                    title:"User Successfully Deleted",
+                    icon: 'success',
                     showConfirmButton: false,
                     timer:1500,
                 });
