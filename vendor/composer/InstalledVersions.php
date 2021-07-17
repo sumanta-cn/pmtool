@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '2afd729406c9c6841fded5d7d19e06c6d567ad4a',
+    'reference' => '11cfcd78184df55788b68c054775f62b6fe42016',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -532,16 +532,16 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '2afd729406c9c6841fded5d7d19e06c6d567ad4a',
+      'reference' => '11cfcd78184df55788b68c054775f62b6fe42016',
     ),
     'laravel/sail' => 
     array (
-      'pretty_version' => 'v1.8.5',
-      'version' => '1.8.5.0',
+      'pretty_version' => 'v1.8.6',
+      'version' => '1.8.6.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'cab38edc00804700518e110df2677ef34c3dbb2e',
+      'reference' => '51ecfe0f048f8f8e6c5617e02a1f67ca22817c98',
     ),
     'laravel/tinker' => 
     array (
@@ -888,8 +888,8 @@ private static $installed = array (
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 

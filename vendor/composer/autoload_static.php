@@ -557,6 +557,7 @@ class ComposerStaticInit8500d58e6f3929bfbc8d9902761d60e1
         'App\\Actions\\Fortify\\UpdateUserProfileInformation' => __DIR__ . '/../..' . '/app/Actions/Fortify/UpdateUserProfileInformation.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AjaxController' => __DIR__ . '/../..' . '/app/Http/Controllers/AjaxController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\HomeController' => __DIR__ . '/../..' . '/app/Http/Controllers/HomeController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
