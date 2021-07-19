@@ -94,7 +94,7 @@ var csrf_token= $("#csrf_token").val();
             data: { 'id': id ,'role_id': role_id},
             dataType: "json",
             success: function (data) {
-                //onsole.log('11');
+                $('.tr'+id).hide();
                 Swal.fire({
                     title:"Role Assigned Successfully",
                     icon: 'success',
