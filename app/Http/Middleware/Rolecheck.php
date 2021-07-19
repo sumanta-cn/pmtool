@@ -16,11 +16,6 @@ class Rolecheck
      */
     public function handle(Request $request,  Closure $next)
     {
-        //dd(Auth::user());
-        //  echo "<pre>";print_r($request->user);die;
-        // if($user->role()->role_name && $user->role()->role_name===""){
-        //     return redirect(403);
-        // }
         if(!Auth::user() || Auth::user()->role_id==0){
             return redirect('noaccess');
         }

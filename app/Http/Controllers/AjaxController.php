@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\Role;
 class AjaxController extends Controller
 {
     public function approveuser(Request $request){
@@ -22,6 +23,26 @@ class AjaxController extends Controller
             }
         }else{
             return response()->json(array('msg'=> 'User Invalid','icon'=>'error'), 500);
+        }
+        return response()->json(array('msg'=> 'Method Not Accessible','icon'=>'warning'), 403);
+    }
+    public function addrole(Request $request){
+        if(!$request->id || !$request->role_id || $request->role_id<0 ||$request->id<0){
+            return response()->json(array('msg'=> 'Invalid User','icon'=>'error'), 500);
+        }else{
+            $userdata= User::find($request->id);
+            if($userdata){
+                $role=Role::find($request->role_id);
+                if($role){
+                    $userdata->role_id= $request->role_id;
+                    $userdata->save();
+                    return response()->json(array('msg'=> 'Approved Successfully','icon'=>'success'), 200);
+                }else{
+                    return response()->json(array('msg'=> 'Role Not Found','icon'=>'success'), 404);
+                }
+            }else{
+                return response()->json(array('msg'=> 'User Not Found','icon'=>'error'), 404);
+            }
         }
         return response()->json(array('msg'=> 'Method Not Accessible','icon'=>'warning'), 403);
     }
