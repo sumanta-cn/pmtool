@@ -49,7 +49,7 @@
                             <td class="text-nowrap">{{date_format((date_create($userval->updated_at)),"dS F, g:i A, Y")}}</td>
                             <td class="align-middle">
                                 <select class="form-control form-control-sm roleselect" data-id="{{$userval->id}}">
-                                    <option>-------Select Role-------</option>
+                                    <option value="">-------Select Role-------</option>
                                     <?php if(isset($roles) && !empty($roles)){foreach($roles as $roleval){?>
                                         <option value="{{$roleval->id}}">{{$roleval->role_name}}</option>
                                     <?php } } ?>

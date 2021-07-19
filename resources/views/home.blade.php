@@ -37,7 +37,7 @@
               <div class="icon">
                 <i class="fas fa-user "></i>
               </div>
-              <a href="#" class="small-box-footer">More Info<i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -52,7 +52,7 @@
               <div class="icon">
                 <i class="fab fa-dev"></i>
               </div>
-              <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -67,7 +67,7 @@
               <div class="icon">
                 <i class="fas fa-user-tie"></i>
               </div>
-              <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -82,7 +82,7 @@
               <div class="icon">
                 <i class="fas fa-user-circle"></i>
               </div>
-              <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -98,7 +98,7 @@
               <div class="icon">
                 <i class="fas fa-project-diagram"></i>
               </div>
-              <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->
@@ -114,7 +114,7 @@
               <div class="icon">
                 <i class="fas fa-tasks"></i>
               </div>
-              <a href="#" class="small-box-footer">More Info <i class="fas fa-arrow-circle-right"></i></a>
+              <a href="#" class="small-box-footer">View <i class="fas fa-eye"></i></a>
             </div>
           </div>
           <!-- ./col -->

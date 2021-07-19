@@ -19,8 +19,9 @@ use App\Http\Controllers\Controller;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','Checkadmin'])->group(function () {
     Route::any('/approveuser',[AjaxController::class, 'approveuser']);
+    Route::any('/addrole',[AjaxController::class, 'addrole']);
 });
 // Route::view('/home', 'home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
 Route::get('/test',[HomeController::class, 'test']);

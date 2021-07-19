@@ -9,7 +9,7 @@ var csrf_token= $("#csrf_token").val();
     $('.nav a').removeClass('active');
     $('.nav a').each(function() {
         var $this = $(this);
-        console.log($this.attr('href'));
+        //console.log($this.attr('href'));
         if ($this.attr('href') == current) {
             $this.addClass('active');
         }
@@ -74,17 +74,42 @@ var csrf_token= $("#csrf_token").val();
             }
         })
     });
-    $( '.roleselect' ).change(function() {
-
-        var role= $(this).val();
+    $( 'body' ).on('change','.roleselect',function() {
+        var role= parseInt($(this).val());
         var id= $(this).data('id');
-        console.log(role);
-        if (role != undefined || role !='' || role > 0) {
+        if ( $.isNumeric(role) || role != undefined || role !="" || role > 0) {
             var html= '<a href="javascript:void(0)" class="btn btn-sm btn-success assign" data-role-id="'+role+'" data-id="'+id+'" title="Assign Role"><i class="fas fa-check"></i></a>';
             $('.td'+id).empty().append(html);
-        }else{
+        }
+        if(!$.isNumeric(role)){
             $('.td'+id).empty();
         }
-
     })
+    $("#unapprovelist").on('click','.assign',function(){
+        var id = $(this).data('id');
+        var role_id = $(this).data('role-id');
+        $.ajax({
+            type: 'POST',
+            url: base_url+"addrole",
+            data: { 'id': id ,'role_id': role_id},
+            dataType: "json",
+            success: function (data) {
+                //onsole.log('11');
+                Swal.fire({
+                    title:"Role Assigned Successfully",
+                    icon: 'success',
+                    showConfirmButton: false,
+                    timer:1500,
+                });
+            },
+            error : function(data){
+                Swal.fire({
+                    title:data.msg,
+                    icon: data.icon,
+                    showConfirmButton: false,
+                    timer:1500,
+                });
+            }
+        })
+    });
 

@@ -27,12 +27,13 @@ class AjaxController extends Controller
         return response()->json(array('msg'=> 'Method Not Accessible','icon'=>'warning'), 403);
     }
     public function addrole(Request $request){
+
         if(!$request->id || !$request->role_id || $request->role_id<0 ||$request->id<0){
             return response()->json(array('msg'=> 'Invalid User','icon'=>'error'), 500);
         }else{
             $userdata= User::find($request->id);
             if($userdata){
-                $role=Role::find($request->role_id);
+                $role=Role::find($request->role_id)->where('role_id','!=','1');
                 if($role){
                     $userdata->role_id= $request->role_id;
                     $userdata->save();
