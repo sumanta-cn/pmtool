@@ -25,17 +25,14 @@ class HomeController extends Controller
         $projects= Project::get()->where('status','=','1')->count();
         $works= Work::get()->where('is_active','=','1')->count();
         $data= array('user'=>$alluser,'developer'=>$devuser,'pm'=>$pmuser,'client'=>$cuser,'works'=>$works,'projects'=>$projects);
-        //dd($data);
         return view('home',['data'=>$data]);
     }
     public function userlist(){
         $users= User::select('id','email','name','created_at')->where('role_id','!=','1')->where('is_active','!=','1')->get();
-        //dd($users);
         return view('userlist',['users'=>$users]);
     }
     public function assignrole(){
-        // $users= User::select('id','email','name','Updated_at')->where('role_id','!=','1')->where('role_id','!=','0')->where('is_active','=','1')->get();
-        $users= User::select('id','email','name','Updated_at')->where([['role_id','!=','1'],['role_id','!=','0'],['is_active','=','1']])->get();
+        $users= User::select('id','email','name','Updated_at')->where([['role_id','=','0'],['is_active','=','1']])->get();
         $roles= Role::select('id','role_name')->where('role_name','!=','Admin')->get();
         return view('assignrole',['users'=>$users,'roles'=>$roles]);
     }
