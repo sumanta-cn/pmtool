@@ -11,11 +11,11 @@ use App\Models\Role;
 class AjaxController extends Controller
 {
 
-    private $userRepository;
+    //private $userRepository;
 
-   public function __construct(UserRepositoryInterface $userRepository){
-       $this->userRepository = $userRepository;
-   }
+    // public function __construct(UserRepositoryInterface $userRepository){
+    //     $this->userRepository = $userRepository;
+    // }
     public function approveuser(Request $request){
         $id = $request->id > 0 ? $request->id : 0;
         if($request->id > 0){

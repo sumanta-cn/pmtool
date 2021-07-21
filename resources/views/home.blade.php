@@ -61,7 +61,6 @@
             <div class="small-box bg-warning">
               <div class="inner">
                 <h3>{{sprintf("%02d", $data['pm'])}}</h3>
-
                 <p>Project Manager</p>
               </div>
               <div class="icon">
@@ -127,7 +126,7 @@
 
 @endsection
 
-@section('developercontent')
+@section('usercontent')
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
     <div class="row">
         <ol class="breadcrumb">

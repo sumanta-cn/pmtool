@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-	<title>Lumino - Dashboard</title>
+	<title>{{(Auth::user()->role->role_name)}} </title>
 	<link href="developer/css/bootstrap.min.css" rel="stylesheet">
 	<link href="developer/css/font-awesome.min.css" rel="stylesheet">
 	<link href="developer/css/datepicker3.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span></button>
-				<a class="navbar-brand" href="#"><span>Developer</span>&nbsp;Portal</a>
+				<a class="navbar-brand" href="{{route('home')}}"><span>User</span>&nbsp;Portal</a>
 				<ul class="nav navbar-top-links navbar-right">
 					<li class="dropdown"><a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
 						<em class="fa fa-envelope"></em><span class="label label-danger">3</span>
@@ -85,11 +85,11 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="{{(Auth::user()->role->role_name ==='Developer') ? 'image/dev.png' :((Auth::user()->role->role_name ==='Project_Manager') ? 'image/pm.jpg' : 'image/client.png')}} " class="img-responsive" alt="">
+				<img src="{{(Auth::user()->role->role_name ==='Developer') ? 'image/dev.png' :((Auth::user()->role->role_name ==='Project_Manager') ? 'image/pm.jpg' : 'image/client.png')}} " class="img-responsive img-thumbnail" alt="">
 			</div>
 			<div class="profile-usertitle">
-				<div class="profile-usertitle-name">{{ ucfirst(Auth::user()->name) }}</div>
-				<div class="profile-usertitle-status"><span class="indicator label-success"></span>Online</div>
+				<div class="profile-usertitle-name">{{ ucfirst(Auth::user()->name)}}</div>
+				<div class="profile-usertitle-status"><span class="indicator label-success"></span>{{str_replace('_',' ',Auth::user()->role->role_name)}}</div>
 			</div>
 			<div class="clear"></div>
 		</div>
@@ -101,14 +101,19 @@
 		</form>
 		<ul class="nav menu">
 			<li class="active"><a href="{{ route('home') }}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
-			<li><a href="{{ route('logout') }}"onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();"><em class="fa fa-power-off">&nbsp;</em> Logout</a></li>
+            @if (Auth::user()->role->role_name ==='Client')
+                <li class=""><a href="{{ route('add_work') }}"><em class="fa fa-tasks">&nbsp;</em> Propose Work</a></li>
+            @endif
+
+            <li>
+                <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><em class="fa fa-power-off">&nbsp;</em>Logout</a>
+            </li>
 		</ul>
 	</div><!--/.sidebar-->
     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
         @csrf
     </form>
-		@yield('developercontent');<!--/.main-->
+		@yield('usercontent');<!--/.main-->
 
 	<script src="developer/js/jquery-1.11.1.min.js"></script>
 	<script src="developer/js/bootstrap.min.js"></script>
@@ -118,17 +123,6 @@
 	<script src="developer/js/easypiechart-data.js"></script>
 	<script src="developer/js/bootstrap-datepicker.js"></script>
 	<script src="developer/js/custom.js"></script>
-	<script>
-		window.onload = function () {
-	var chart1 = document.getElementById("line-chart").getContext("2d");
-	window.myLine = new Chart(chart1).Line(lineChartData, {
-	responsive: true,
-	scaleLineColor: "rgba(0,0,0,.2)",
-	scaleGridLineColor: "rgba(0,0,0,.05)",
-	scaleFontColor: "#c5c7cc"
-	});
-};
-	</script>
-
+	<script src="js/user.js"></script>
 </body>
 </html>

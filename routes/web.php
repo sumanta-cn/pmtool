@@ -26,6 +26,7 @@ Route::middleware(['auth','Checkadmin'])->group(function () {
 // Route::view('/home', 'home',[HomeController::class, 'index'])->middleware('auth','Rolecheck');
 Route::get('/test',[HomeController::class, 'test']);
 Route::get('/user_list',[HomeController::class, 'userlist'])->middleware('auth','Rolecheck','Checkadmin')->name('user_list');
-Route::get('/assign_role',[HomeController::class, 'assignrole'])->middleware('auth','Rolecheck','Checkadmin')->name('assign_role');
+Route::get('/add_work',[HomeController::class, 'addwork'])->middleware('auth','Rolecheck')->name('add_work');
+Route::get('/assign_role',[HomeController::class, 'assignrole'])->middleware('auth','Rolecheck')->name('assign_role');
 Route::get('/home',[HomeController::class, 'index'])->middleware('auth','Rolecheck')->name('home');
 Route::get('/noaccess',[Controller::class, 'index']);
