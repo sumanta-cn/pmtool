@@ -16,5 +16,8 @@ return [
     'failed' => 'These credentials do not match our records.',
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
+    'wrongwork' => 'Work process can not be added',
+    'unique' => 'This :attribute already exist',
+    'pmunavailable' => 'Project Manager is not available',
 
 ];

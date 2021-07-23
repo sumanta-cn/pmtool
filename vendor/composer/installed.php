@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'ba7166beba4b07f005875515ecb3d927eda0e7c8',
+    'reference' => '83875b486ee45d221b6cd4ecf0199dca3c02c847',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -508,7 +508,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'ba7166beba4b07f005875515ecb3d927eda0e7c8',
+      'reference' => '83875b486ee45d221b6cd4ecf0199dca3c02c847',
     ),
     'laravel/sail' => 
     array (
@@ -566,12 +566,12 @@
     ),
     'monolog/monolog' => 
     array (
-      'pretty_version' => '2.3.1',
-      'version' => '2.3.1.0',
+      'pretty_version' => '2.3.2',
+      'version' => '2.3.2.0',
       'aliases' => 
       array (
       ),
-      'reference' => '9738e495f288eec0b187e310b7cdbbb285777dbe',
+      'reference' => '71312564759a7db5b789296369c1a264efc43aad',
     ),
     'mtdowling/cron-expression' => 
     array (
@@ -864,8 +864,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0.0',
-        1 => '1.0',
+        0 => '1.0',
+        1 => '1.0.0',
       ),
     ),
     'psr/simple-cache' => 
