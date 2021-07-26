@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '83875b486ee45d221b6cd4ecf0199dca3c02c847',
+    'reference' => 'fea620b8203e508fc2ed0e477319ef9a10b24aed',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -69,6 +69,15 @@
       array (
         0 => '*',
       ),
+    ),
+    'dflydev/dot-access-data' => 
+    array (
+      'pretty_version' => 'v3.0.0',
+      'version' => '3.0.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e04ff030d24a33edc2421bef305e32919dd78fc3',
     ),
     'doctrine/cache' => 
     array (
@@ -508,7 +517,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '83875b486ee45d221b6cd4ecf0199dca3c02c847',
+      'reference' => 'fea620b8203e508fc2ed0e477319ef9a10b24aed',
     ),
     'laravel/sail' => 
     array (
@@ -530,12 +539,21 @@
     ),
     'league/commonmark' => 
     array (
-      'pretty_version' => '1.6.6',
-      'version' => '1.6.6.0',
+      'pretty_version' => '2.0.0',
+      'version' => '2.0.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'c4228d11e30d7493c6836d20872f9582d8ba6dcf',
+      'reference' => '167142baf9a6b946f99ad9325b06028606f8238e',
+    ),
+    'league/config' => 
+    array (
+      'pretty_version' => 'v1.1.0',
+      'version' => '1.1.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '20d42d88f12a76ff862e17af4f14a5a4bbfd0925',
     ),
     'league/flysystem' => 
     array (
@@ -601,6 +619,24 @@
       array (
       ),
       'reference' => 'f47f17d17602b2243414a44ad53d9f8b9ada5fdb',
+    ),
+    'nette/schema' => 
+    array (
+      'pretty_version' => 'v1.2.1',
+      'version' => '1.2.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f5ed39fc96358f922cedfd1e516f0dadf5d2be0d',
+    ),
+    'nette/utils' => 
+    array (
+      'pretty_version' => 'v3.2.2',
+      'version' => '3.2.2.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '967cfc4f9a1acd5f1058d76715a424c53343c20c',
     ),
     'nikic/php-parser' => 
     array (
@@ -864,8 +900,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
