@@ -35,4 +35,11 @@ class StorePostRequest extends FormRequest
             'updated_at'=> 'required',
         ];
     }
+    public function messages(){
+        return [
+            'project_name.required' => 'Project Name is required',
+            'description.required' => 'Please Provide a description',
+            'estimated_time.required' => 'Please Give a Estimated Time',
+        ];
+    }
 }
