@@ -135,8 +135,16 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'email' => [
+            'validformat' => 'email format is not accepted',
+        ],
+        'file' => [
+            'fileformat' => 'File format is not accepted',
+        ],
+        'project_name' => [
+            'specialname' => 'Special Charecter not accepted',
+            'longname' => 'Name is too long',
+            'shortname' => 'Name is too long',
         ],
     ],
 

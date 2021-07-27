@@ -16,7 +16,8 @@
                 {{-- <div class="panel-heading">Forms</div> --}}
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <form role="form">
+                        <form role="form" method='post' enctype="multipart/form-data">
+                            @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Project Name</label>
@@ -33,12 +34,12 @@
                             </div>
 
                             <div class="form-group">
-                                <label>File input</label>
+                                <label>Add Documentation</label>
                                 <input type="file">
-                                <p class="help-block">Example block-level help text here.</p>
+                                <p class="help-block"></p>
                             </div>
                             <div class= "form-group col-md-12 text-right">
-                                <button type="button" class="btn btn-sm btn-success">Success</button>
+                                <button type="submit" class="btn btn-success">Success</button>
                             </div>
 
                         </form>

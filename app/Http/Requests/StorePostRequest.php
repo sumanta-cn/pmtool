@@ -27,11 +27,12 @@ class StorePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'project_name' => 'required|unique:posts|max:255',
+            'project_name' => 'bail|required|unique:posts|max:255',
             'description' => 'required',
             'estimated_time'=> 'required',
             'status'=> 'required',
-            'created_at'=> 'required',
+            'document'=> 'mimes:pdf,doc,docx|max:2048',
+            'updated_at'=> 'required',
             'updated_at'=> 'required',
         ];
     }
@@ -40,6 +41,7 @@ class StorePostRequest extends FormRequest
             'project_name.required' => 'Project Name is required',
             'description.required' => 'Please Provide a description',
             'estimated_time.required' => 'Please Give a Estimated Time',
+            'document.required' => 'Please Give a Estimated Time',
         ];
     }
 }

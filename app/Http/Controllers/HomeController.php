@@ -38,7 +38,18 @@ class HomeController extends Controller
         $roles= Role::select('id','role_name')->where('role_name','!=','Admin')->get();
         return view('assignrole',['users'=>$users,'roles'=>$roles]);
     }
-    public function addwork(){
+    public function addwork(Request $request){
+
+        $file = new Project;
+
+        if($request->file()) {
+            $name = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
+
+            $file->name = time().'_'.$request->file->getClientOriginalName();
+            $file->file = '/storage/' . $filePath;
+            $file->save();
+        }
         return view('addwork');
     }
 
