@@ -44,7 +44,7 @@
 
                             <div class="form-group">
                                 <label>Add Documentation</label>
-                                <input type="file" name="file">
+                                <input type="file" value="{{old('file')}}" name="file">
                                 <p class="help-block"></p>
                                 @error('file')
                                     <span class="text-danger">{{$message}}</span>
