@@ -28,7 +28,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             'project_name' => 'required|unique:projects|max:255',
-            'desc' => 'required',
+            'desc' => 'required|string',
             'time'=> 'required|integer|max:100|min:1',
             //'status'=> 'required',
             'file'=> 'mimes:pdf,doc,docx|max:2048',

@@ -9,6 +9,7 @@ use App\Models\Role;
 use App\Models\Project;
 use App\Models\Work;
 use App\Http\Requests\StoreProjectRequest;
+use App\Http\Requests\UpdateProjectRequest;
 class HomeController extends Controller
 {
 
@@ -40,19 +41,19 @@ class HomeController extends Controller
         return view('assignrole',['users'=>$users,'roles'=>$roles]);
     }
     public function addwork(Request $request){
-
-
-        // $file = new Project;
-
-        // if($request->file()) {
-        //     $name = time().'_'.$request->file->getClientOriginalName();
-        //     $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
-
-        //     $file->name = time().'_'.$request->file->getClientOriginalName();
-        //     $file->file = '/storage/' . $filePath;
-        //     $file->save();
-        // }
         return view('addwork');
+    }
+
+    public function listwork(Request $request){
+        $data= Project::where('client_name','=',Auth::User()->name)->get();
+        //dd($data);
+        return view('listwork',['works'=>$data]);
+    }
+    public function viewwork(Request $request){
+        // dd($request->id);
+        $data= Project::find($request->id);
+        //dd($data);
+        return view('viewwork',['work'=>$data]);
     }
 
     public function store(StoreProjectRequest $request){
@@ -62,12 +63,14 @@ class HomeController extends Controller
         $validated = $request->validated();
         $work= new Project;
         $work->project_name= $request->project_name;
+        $work->client_name= Auth::user()->name;
         $work->description = $request->desc;
         $work->estimated_time = $request->time;
         $work->status = 1;
         $work->created_at = date('Y-m-d H:i:s');
         $work->updated_at = date('Y-m-d H:i:s');
         if($request->file()) {
+
             $name = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
 
@@ -75,6 +78,24 @@ class HomeController extends Controller
             $work->document = '/storage/' . $filePath;
         }
         $work->save();
+        return redirect(route('home'));
+    }
+    public function update(UpdateProjectRequest $request,Project $project){
+        $validated = $request->validated();
+        $work= Project::find($request->id);
+        $work->project_name= $request->project_name;
+
+        $work->description = $request->desc;
+        $work->estimated_time = $request->time;
+        $work->updated_at = date('Y-m-d H:i:s');
+        if($request->file()) {
+
+            $name = time().'_'.$request->file->getClientOriginalName();
+            $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
+            unlink($work->document);
+            $work->document = '/storage/' . $filePath;
+        }
+        $work->update();
         return redirect(route('home'));
     }
 

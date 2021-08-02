@@ -5,10 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}" />
 	<title>{{(Auth::user()->role->role_name)}} </title>
-	<link href="developer/css/bootstrap.min.css" rel="stylesheet">
-	<link href="developer/css/font-awesome.min.css" rel="stylesheet">
-	<link href="developer/css/datepicker3.css" rel="stylesheet">
-	<link href="developer/css/styles.css" rel="stylesheet">
+	<link href="{{asset('developer/css/bootstrap.min.css')}}" rel="stylesheet">
+	<link href="{{asset('developer/css/font-awesome.min.css')}}" rel="stylesheet">
+	<link href="{{asset('developer/css/datepicker3.css')}}" rel="stylesheet">
+	<link href="{{asset('developer/css/styles.css')}}" rel="stylesheet">
 
 	<!--Custom Font-->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -85,7 +85,7 @@
 	<div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
 		<div class="profile-sidebar">
 			<div class="profile-userpic">
-				<img src="{{(Auth::user()->role->role_name ==='Developer') ? 'image/dev.png' :((Auth::user()->role->role_name ==='Project_Manager') ? 'image/pm.jpg' : 'image/client.png')}} " class="img-responsive img-thumbnail" alt="">
+				<img src="{{asset((Auth::user()->role->role_name ==='Developer') ? 'image/dev.png' :((Auth::user()->role->role_name ==='Project_Manager') ? 'image/pm.jpg' : 'image/client.png'))}} " class="img-responsive img-thumbnail" alt="">
 			</div>
 			<div class="profile-usertitle">
 				<div class="profile-usertitle-name">{{ ucfirst(Auth::user()->name)}}</div>
@@ -102,7 +102,7 @@
 		<ul class="nav menu">
 			<li class="active"><a href="{{ route('home') }}"><em class="fa fa-dashboard">&nbsp;</em> Dashboard</a></li>
             @if (Auth::user()->role->role_name ==='Client')
-                <li class=""><a href="{{ route('add_work') }}"><em class="fa fa-tasks">&nbsp;</em> Propose Work</a></li>
+                <li class=""><a href="{{ route('listwork') }}"><em class="fa fa-tasks">&nbsp;</em> List Work</a></li>
             @endif
 
             <li>
@@ -115,14 +115,14 @@
     </form>
 		@yield('usercontent');<!--/.main-->
 
-	<script src="developer/js/jquery-1.11.1.min.js"></script>
-	<script src="developer/js/bootstrap.min.js"></script>
-	<script src="developer/js/chart.min.js"></script>
-	<script src="developer/js/chart-data.js"></script>
-	<script src="developer/js/easypiechart.js"></script>
-	<script src="developer/js/easypiechart-data.js"></script>
-	<script src="developer/js/bootstrap-datepicker.js"></script>
-	<script src="developer/js/custom.js"></script>
-	<script src="js/user.js"></script>
+	<script src="{{asset('developer/js/jquery-1.11.1.min.js')}}"></script>
+	<script src="{{asset('developer/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('developer/js/chart.min.js')}}"></script>
+	<script src="{{asset('developer/js/chart-data.js')}}"></script>
+	<script src="{{asset('developer/js/easypiechart.js')}}"></script>
+	<script src="{{asset('developer/js/easypiechart-data.js')}}"></script>
+	<script src="{{asset('developer/js/bootstrap-datepicker.js')}}"></script>
+	<script src="{{asset('developer/js/custom.js')}}"></script>
+	<script src="{{asset('js/user.js')}}"></script>
 </body>
 </html>
