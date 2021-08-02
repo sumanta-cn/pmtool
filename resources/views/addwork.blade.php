@@ -16,27 +16,39 @@
                 {{-- <div class="panel-heading">Forms</div> --}}
                 <div class="panel-body">
                     <div class="col-md-12">
-                        <form role="form" method='post' enctype="multipart/form-data">
+                        <form action= "{{route('store')}}" role="form" method='post' enctype="multipart/form-data">
                             @csrf
                             <div class="form-row">
                                 <div class="form-group col-md-6">
                                     <label>Project Name</label>
-                                    <input type="text" class="form-control" placeholder="Project Name">
+                                    <input type="text" class="form-control" name="project_name" value="{{old('project_name')}}" placeholder="Project Name">
+                                    @error('project_name')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Time By Need</label>
-                                    <input type="text" class="form-control" placeholder="Time in months">
+                                    <input type="text" class="form-control" name="time" value="{{old('time')}}" placeholder="Time in months">
+                                    @error('time')
+                                        <span class="text-danger">{{$message}}</span>
+                                    @enderror
                                 </div>
                             </div>
                             <div class="form-group col-md-12">
                                 <label>Project Description</label>
-                                <textarea class="form-control" rows="3"></textarea>
+                                <textarea class="form-control" name="desc" rows="3">{{old('desc')}}</textarea>
+                                @error('desc')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
 
                             <div class="form-group">
                                 <label>Add Documentation</label>
-                                <input type="file">
+                                <input type="file" name="file">
                                 <p class="help-block"></p>
+                                @error('file')
+                                    <span class="text-danger">{{$message}}</span>
+                                @enderror
                             </div>
                             <div class= "form-group col-md-12 text-right">
                                 <button type="submit" class="btn btn-success">Success</button>

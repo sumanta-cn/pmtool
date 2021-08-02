@@ -144,7 +144,7 @@ return [
         'project_name' => [
             'specialname' => 'Special Charecter not accepted',
             'longname' => 'Name is too long',
-            'shortname' => 'Name is too long',
+            'shortname' => 'Name is too short',
         ],
     ],
 

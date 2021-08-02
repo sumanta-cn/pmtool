@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '621fc1b405e5dfb392e8f2f2e46b911a3f38c1ec',
+    'reference' => 'd0206291b60f58a0df4acdd2777e0cbf47d2f847',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -517,7 +517,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '621fc1b405e5dfb392e8f2f2e46b911a3f38c1ec',
+      'reference' => 'd0206291b60f58a0df4acdd2777e0cbf47d2f847',
     ),
     'laravel/sail' => 
     array (
@@ -613,12 +613,12 @@
     ),
     'nesbot/carbon' => 
     array (
-      'pretty_version' => '2.50.0',
-      'version' => '2.50.0.0',
+      'pretty_version' => '2.51.1',
+      'version' => '2.51.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'f47f17d17602b2243414a44ad53d9f8b9ada5fdb',
+      'reference' => '8619c299d1e0d4b344e1f98ca07a1ce2cfbf1922',
     ),
     'nette/schema' => 
     array (
@@ -1368,12 +1368,12 @@
     ),
     'theseer/tokenizer' => 
     array (
-      'pretty_version' => '1.2.0',
-      'version' => '1.2.0.0',
+      'pretty_version' => '1.2.1',
+      'version' => '1.2.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '75a63c33a8577608444246075ea0af0d052e452a',
+      'reference' => '34a41e998c2183e22995f158c581e7b5e755ab9e',
     ),
     'tijsverkoyen/css-to-inline-styles' => 
     array (

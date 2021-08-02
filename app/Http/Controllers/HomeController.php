@@ -8,6 +8,7 @@ use App\Models\User;
 use App\Models\Role;
 use App\Models\Project;
 use App\Models\Work;
+use App\Http\Requests\StoreProjectRequest;
 class HomeController extends Controller
 {
 
@@ -40,17 +41,41 @@ class HomeController extends Controller
     }
     public function addwork(Request $request){
 
-        $file = new Project;
 
+        // $file = new Project;
+
+        // if($request->file()) {
+        //     $name = time().'_'.$request->file->getClientOriginalName();
+        //     $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
+
+        //     $file->name = time().'_'.$request->file->getClientOriginalName();
+        //     $file->file = '/storage/' . $filePath;
+        //     $file->save();
+        // }
+        return view('addwork');
+    }
+
+    public function store(StoreProjectRequest $request){
+        //dd($request);
+        // The incoming request is valid...
+        // Retrieve the validated input data...
+        $validated = $request->validated();
+        $work= new Project;
+        $work->project_name= $request->project_name;
+        $work->description = $request->desc;
+        $work->estimated_time = $request->time;
+        $work->status = 1;
+        $work->created_at = date('Y-m-d H:i:s');
+        $work->updated_at = date('Y-m-d H:i:s');
         if($request->file()) {
             $name = time().'_'.$request->file->getClientOriginalName();
             $filePath = $request->file('file')->storeAs('uploads', $name, 'public');
 
-            $file->name = time().'_'.$request->file->getClientOriginalName();
-            $file->file = '/storage/' . $filePath;
-            $file->save();
+            //$work->name = time().'_'.$request->file->getClientOriginalName();
+            $work->document = '/storage/' . $filePath;
         }
-        return view('addwork');
+        $work->save();
+        return redirect(route('home'));
     }
 
 }
